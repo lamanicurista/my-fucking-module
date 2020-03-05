@@ -1,0 +1,7 @@
+.travis.yml
+.babel.config.js
+.gitignore
+
+node_modules
+./src
+test

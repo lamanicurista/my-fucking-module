@@ -1,0 +1,22 @@
+{
+    "name": "my-module",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "types": "lib/types/index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/lamanicurista/my-fucking-module"
+    },
+    "directories": {
+        "lib": "lib"
+    },
+    "scripts": {
+        "build2": "rm -Rf ./lib/* && tsc && cp ./index.d.ts ./lib",
+        "build": "rm -Rf ./lib/* && tsc --declaration --declarationDir lib/types",
+        "test": "node lib/index.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+}
