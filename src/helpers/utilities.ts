@@ -6,7 +6,7 @@
 
 //type isNullOrEmpty = (obj: any) => boolean;
 
-function isNullOrEmpty(obj: any): boolean {
+/*function isNullOrEmpty(obj: any): boolean {
     return obj === null || obj === undefined || obj === '';
 }
 
@@ -24,4 +24,20 @@ export default {
     isNullOrEmpty,
     isEmptyObject,
     clearNullOrEmpty
+}*/
+
+class Utilities {
+    isNullOrEmpty(obj: any): boolean {
+        return obj === null || obj === undefined || obj === '';
+    }
+
+    isEmptyObject(obj: any): boolean {
+        return this.isNullOrEmpty(obj) || Object.keys(obj).length === 0;
+    }
+
+    clearNullOrEmpty(obj: any, _default: any): any {
+        return this.isNullOrEmpty(obj) ? (!this.isNullOrEmpty(_default) ? _default : '') : obj;
+    }
 }
+
+export default new Utilities();
